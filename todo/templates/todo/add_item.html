@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add a To-do Item</h1>
+    <form method="POST" action="add">
+        <!-- add this in order to make sure that any data provided is actually coming from this form -->
+        {% csrf_token %}
+        <!-- instead of writing out a form in html, we can use django to insert a template literal -->
+        <!-- as_p is one of a number of styling options in django -->
+        {{ form.as_p }}
+        <div>
+            <p>
+                <button type="submit">Add Item</button>
+            </p>
+        </div>
+    </form>
+</body>
+</html>
